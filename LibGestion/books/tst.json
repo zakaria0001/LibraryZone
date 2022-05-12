@@ -1,0 +1,76 @@
+{
+    "kind": "books#volume",
+    "id": "hjEFCAAAQBAJ",
+    "etag": "ApaFLyEEsc8",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/hjEFCAAAQBAJ",
+    "volumeInfo": {
+      "title": "Clean Code",
+      "subtitle": "A Handbook of Agile Software Craftsmanship",
+      "authors": [
+        "Robert C. Martin"
+      ],
+      "publisher": "Pearson Education",
+      "publishedDate": "2009",
+      "description": "Looks at the principles and clean code, includes case studies showcasing the practices of writing clean code, and contains a list of heuristics and \"smells\" accumulated from the process of writing clean code.",
+      "industryIdentifiers": [
+        {
+          "type": "ISBN_13",
+          "identifier": "9780132350884"
+        },
+        {
+          "type": "ISBN_10",
+          "identifier": "0132350882"
+        }
+      ],
+      "readingModes": {
+        "text": false,
+        "image": false
+      },
+      "pageCount": 431,
+      "printType": "BOOK",
+      "categories": [
+        "Computers"
+      ],
+      "averageRating": 4.5,
+      "ratingsCount": 10,
+      "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": false,
+      "contentVersion": "preview-1.0.0",
+      "panelizationSummary": {
+        "containsEpubBubbles": false,
+        "containsImageBubbles": false
+      },
+      "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=hjEFCAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=hjEFCAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      },
+      "language": "en",
+      "previewLink": "http://books.google.com/books?id=hjEFCAAAQBAJ&dq=intitle:Clean+Code&hl=&cd=1&source=gbs_api",
+      "infoLink": "http://books.google.com/books?id=hjEFCAAAQBAJ&dq=intitle:Clean+Code&hl=&source=gbs_api",
+      "canonicalVolumeLink": "https://books.google.com/books/about/Clean_Code.html?hl=&id=hjEFCAAAQBAJ"
+    },
+    "saleInfo": {
+      "country": "MA",
+      "saleability": "NOT_FOR_SALE",
+      "isEbook": false
+    },
+    "accessInfo": {
+      "country": "MA",
+      "viewability": "NO_PAGES",
+      "embeddable": false,
+      "publicDomain": false,
+      "textToSpeechPermission": "ALLOWED",
+      "epub": {
+        "isAvailable": false
+      },
+      "pdf": {
+        "isAvailable": false
+      },
+      "webReaderLink": "http://play.google.com/books/reader?id=hjEFCAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+      "accessViewStatus": "NONE",
+      "quoteSharingAllowed": false
+    },
+    "searchInfo": {
+      "textSnippet": "Looks at the principles and clean code, includes case studies showcasing the practices of writing clean code, and contains a list of heuristics and &quot;smells&quot; accumulated from the process of writing clean code."
+    }
+  },
