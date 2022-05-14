@@ -13,3 +13,7 @@ def api(request):
     args['items'] = response.json()
     return render(request, 'api.html', args)
 
+def dashboard(request):
+   
+    return render(request, 'Dashboard.html')
+

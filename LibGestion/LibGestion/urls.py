@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from books.views import api
+from books.views import api,dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', api, name='api'),
+    path('dashboard/', dashboard, name='dashboard'),
 ]
