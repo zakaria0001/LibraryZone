@@ -1,12 +1,112 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>LibraryZone - Dashboard</title>
 </head>
 <body>
-    <h1>Hello Dash</h1>
+    <style>
+        body{
+            background-color: #E4E7EB;
+        }
+        .col-sm-3{
+            color: #D1D5DB;
+        } .col-sm-4 h2{
+text-align: center;        }
+      .container {
+        height:100vh;
+
+      }
+      .row{
+          margin-left: -15%;
+      }
+      ul {
+  list-style-type: none;
+}
+
+.col-sm-9 h2{
+    text-align: center;
+}.col-sm-9 {
+background-color: red;}
+
+.statistiques{    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    /* align-items: center; */
+    flex-wrap: wrap;
+    position: relative;
+
+  }
+  .Stats {
+   width: 20%; 
+   /* background-color: rgba(249, 245, 245, 0.5); */
+   background-color:white;
+   text-align: center;
+   margin-right: 2px;
+   border-radius: 20px;
+   /* margin: 5px;  */
+   position: relative;
+
+  }
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}   
+    </style>
+<div class="container" >
+    <div class="row no-gutters">
+
+        <div class="col-sm-3" style="background-color: #111827">
+            <h2>LibraryZone</h2>
+
+            <ul>
+                <li>Home</li>
+                <li>User</li>
+                <li>Books</li>
+                <li>Settings</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div class="col-sm-9" >
+            <h2>Admin Dashboard</h1>
+                <button onclick="location.href = '../accounts/logout'">Logout</button>
+
+                {% if user.is_authenticated %}
+                 <p>Welcome , {{user.username}}</p>
+                
+                {% else %}
+                <p>Welcome Please Log IN </p>
+
+                {% endif %}
+            <!-- <section class="statistiques">
+                <div class="Stats">
+                    <h4>Budgets</h4>
+                    <span>12 000 DHS</span>
+                    <img src="{% static 'icons8-star-16.png' %}" alt="">
+                </div> 
+                <div class="Stats">
+                        <h4>Total Clients </h4>
+                        <span>4 000 </span>
+                    <img src="{% static 'icons8-star-16.png' %}" alt="">
+                </div><div class="Stats">
+                        <h4>Tasks Progress </h4>
+                </div>
+                <div class="Stats">
+                        <h4>Total Profit </h4>
+                </div>
+            </section>
+            <br>
+            <section>
+                <img src="{% static 'Row.png' %}" alt="" width="100%">
+            </section> -->
+        
+    </div>
+    </div>
+</div>
 </body>
 </html>

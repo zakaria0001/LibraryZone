@@ -136,15 +136,18 @@
 
 </style>
 <body id="body">
-  {% block content %}
+  {% block content %}    
+  <!--  -->
 
+<button> <a href="{% url 'ConnectionAuth' %}">Login / Signup</a> </button>
   <form method="get">
     <h1>LibraryZone
     </h1>
-   <input type="text" name="book" class="nameBook" id="name" placeholder="Full BookName">
+    <input type="text" name="book" class="nameBook" id="name" placeholder="Full BookName">
    
    
 <button  type="submit" class="SearchBut" role="button">Search </button>
+
   </form>
 
   <div class="container"> 
@@ -174,11 +177,13 @@
           No Rating
         </strong>
         {% else %}
+          
         <span>
           {{item.volumeInfo.averageRating}} <img class=""  src="{% static 'icons8-star-16.png' %}" alt="" srcset="">
 
         </span>
-        {% endif %}
+       
+          {%  endif %}
         <br>
         
         <div id="buttons" style="width: 100%">
