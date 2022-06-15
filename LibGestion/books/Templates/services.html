@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zxx">
     
@@ -8,36 +9,33 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
         
-        <!-- Title -->
-        <title>..:: LibraryZone::..</title>
+                <!-- Title -->
+                <title>Services
+                     | LibraryZone</title>
         
-        <!-- Favicon -->
-        <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+                <!-- Favicon -->
+                <link href="{% static 'images/favicon.ico'%}" rel="icon" type="image/x-icon" />
+                
+                <!-- Fonts -->
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+                <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+                
+                <!-- Mobile Menu -->
+                <link href="{% static 'css/mmenu.css' %}" rel="stylesheet" type="text/css" />
+                <link href="{% static 'css/mmenu.positioning.css' %}" rel="stylesheet" type="text/css" />
+                
+                <!-- Stylesheet -->
+                <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
         
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         
-        <!-- Mobile Menu -->
-        <link href="css/mmenu.css" rel="stylesheet" type="text/css" />
-        <link href="css/mmenu.positioning.css" rel="stylesheet" type="text/css" />
-        
-        <!-- Stylesheet -->
-        <link href="style.css" rel="stylesheet" type="text/css" />
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="js/html5shiv.min.js"></script>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
+
         
     </head>
     
     <body>
         
         <!-- Start: Header Section -->
-        <header id="header-v1" class="navbar-wrapper inner-navbar-wrapper">
+        <header id="header-v1" class="navbar-wrapper">
             <div class="container">
                 <div class="row">
                     <nav class="navbar navbar-default">
@@ -46,9 +44,8 @@
                                 <div class="navbar-header">
                                     <div class="navbar-brand">
                                         <h1>
-                                            <a href="index-2.html">
-                                                <img src="#" alt="LibraryZone" />
-                                            </a>
+                                            <a href="{% url 'home' %}">
+                                                <img src="{% static 'LogoLibraryZone.png'%}" alt="" srcset="">                                            </a>
                                         </h1>
                                     </div>
                                 </div>
@@ -57,16 +54,23 @@
                                 <!-- Header Topbar -->
                                 <div class="header-topbar hidden-sm hidden-xs">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-7">
                                             <div class="topbar-info">
-                                                <a href="tel:+61-3-8376-6284"><i class="fa fa-phone"></i>+61-3-8376-6284</a>
+                                                <a href="tel:+61-3-8376-6284"><i class="fa fa-phone"></i>+212 5 22 98 20 11</a>
                                                 <span>/</span>
-                                                <a href="mailto:support@libraria.com"><i class="fa fa-envelope"></i>support@libraria.com</a>
+                                                <a href="mailto:support-LibraryZone@gmail.com"><i class="fa fa-envelope"></i>support-LibraryZone@gmail.com</a>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-5">
                                             <div class="topbar-links">
-                                                <a href="signin.html"><i class="fa fa-lock"></i>Login / Register</a>
+                                                {% if user.is_authenticated %}
+                                                <h3 style="color: white;">Welcome , {{user.username}}</h3>
+                                                <a href="{% url 'Auths' %}"><i class="fa fa-lock"></i>Se Déconnecter</a>
+
+                                                {% else %}
+                                                <a href="{% url 'Auths' %}"><i class="fa fa-lock"></i>Se Connecter / S'inscrire</a>
+
+                                                {% endif %}
                                                 <span>|</span>
                                                 <div class="header-cart dropdown">
                                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -76,7 +80,7 @@
                                                     <div class="dropdown-menu cart-dropdown">
                                                         <ul>
                                                             <li class="clearfix">
-                                                                <img src="images/header-cart-image-01.jpg" alt="cart item" />
+                                                                <img src="{% static 'images/header-cart-image-01.jpg'%}" alt="cart item" />
                                                                 <div class="item-info">
                                                                     <div class="name">
                                                                         <a href="#">The Great Gatsby</a>
@@ -87,7 +91,7 @@
                                                                 <a class="remove" href="#"><i class="fa fa-trash-o"></i></a>
                                                             </li>
                                                             <li class="clearfix">
-                                                                <img src="images/header-cart-image-02.jpg" alt="cart item" />
+                                                                <img src="{% static 'images/header-cart-image-02.jpg'%}" alt="cart item" />
                                                                 <div class="item-info">
                                                                     <div class="name">
                                                                         <a href="#">The Great Gatsby</a>
@@ -98,7 +102,7 @@
                                                                 <a class="remove" href="#"><i class="fa fa-trash-o"></i></a>
                                                             </li>
                                                             <li class="clearfix">
-                                                                <img src="images/header-cart-image-03.jpg" alt="cart item" />
+                                                                <img src="{% static 'images/header-cart-image-03.jpg'%}" alt="cart item" />
                                                                 <div class="item-info">
                                                                     <div class="name">
                                                                         <a href="#">The Great Gatsby</a>
@@ -125,49 +129,18 @@
                                 </div>
                                 <div class="navbar-collapse hidden-sm hidden-xs">
                                     <ul class="nav navbar-nav">
-                                        <li class="dropdown active">
-                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="index-2.html">Home</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="index-2.html">Home V1</a></li>
-                                                <li><a href="home-v2.html">Home V2</a></li>
-                                                <li><a href="home-v3.html">Home V3</a></li>
-                                            </ul>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'home' %}">Accuiel</a>
+                                            
                                         </li>
                                         <li class="dropdown">
-                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="books-media-list-view.html">Books &amp; Media</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="books-media-list-view.html">Books &amp; Media List View</a></li>
-                                                <li><a href="books-media-gird-view-v1.html">Books &amp; Media Grid View V1</a></li>
-                                                <li><a href="books-media-gird-view-v2.html">Books &amp; Media Grid View V2</a></li>
-                                                <li><a href="books-media-detail-v1.html">Books &amp; Media Detail V1</a></li>
-                                                <li><a href="books-media-detail-v2.html">Books &amp; Media Detail V2</a></li>
-                                            </ul>
+                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="books-media-list-view.html">Livres</a>
+                                           
                                         </li>
-                                        <li class="dropdown">
-                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="news-events-list-view.html">News &amp; Events</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="news-events-list-view.html">News &amp; Events List View</a></li>
-                                                <li><a href="news-events-detail.html">News &amp; Events Detail</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Pages</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="signin.html">Signin/Register</a></li>
-                                                <li><a href="404.html">404/Error</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Blog</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="blog.html">Blog Grid View</a></li>
-                                                <li><a href="blog-detail.html">Blog Detail</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        
+                                    
+                                        <li class="dropdown active"><a href="{% url 'services' %}">Services</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -182,45 +155,15 @@
                                     </li>
                                     <li>
                                         <a href="index-2.html">Home</a>
-                                        <ul>
-                                            <li><a href="index-2.html">Home V1</a></li>
-                                            <li><a href="home-v2.html">Home V2</a></li>
-                                            <li><a href="home-v3.html">Home V3</a></li>
-                                        </ul>
+                                       
                                     </li>
                                     <li>
                                         <a href="books-media-list-view.html">Books &amp; Media</a>
-                                        <ul>
-                                            <li><a href="books-media-list-view.html">Books &amp; Media List View</a></li>
-                                            <li><a href="books-media-gird-view-v1.html">Books &amp; Media Grid View V1</a></li>
-                                            <li><a href="books-media-gird-view-v2.html">Books &amp; Media Grid View V2</a></li>
-                                            <li><a href="books-media-detail-v1.html">Books &amp; Media Detail V1</a></li>
-                                            <li><a href="books-media-detail-v2.html">Books &amp; Media Detail V2</a></li>
-                                        </ul>
+                                       
                                     </li>
-                                    <li>
-                                        <a href="news-events-list-view.html">News &amp; Events</a>
-                                        <ul>
-                                            <li><a href="news-events-list-view.html">News &amp; Events List View</a></li>
-                                            <li><a href="news-events-detail.html">News &amp; Events Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="signin.html">Signin/Register</a></li>
-                                            <li><a href="404.html">404/Error</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="blog.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog Grid View</a></li>
-                                            <li><a href="blog-detail.html">Blog Detail</a></li>
-                                        </ul>
-                                    </li>
+                                    
+                                   
+                                    
                                     <li><a href="services.html">Services</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
@@ -236,9 +179,8 @@
         <section class="page-banner services-banner">
             <div class="container">
                 <div class="banner-header">
-                    <h2>Our Services</h2>
+                    <h1 style="color:white">Nos Services : </h1>
                     <span class="underline center"></span>
-                    <p class="lead">The standard chunk of Lorem Ipsum used since</p>
                 </div>
                 <div class="breadcrumb">
                     <ul>
@@ -258,9 +200,8 @@
                             <section class="services-offering">
                                 <div class="container">
                                     <div class="center-content">
-                                        <h2 class="section-title">SERVICE WE ARE OFFERING</h2>
+                                        <h2 class="section-title">Les Services Qu'ont Proposent</h2>
                                         <span class="underline center"></span>
-                                        <p class="lead">The standard chunk of Lorem Ipsum used since</p>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -431,7 +372,7 @@
                                                     <div class="fact-icon">
                                                         <img src="images/icon-ebooks.png" alt="" />
                                                     </div>
-                                                    <span>eBooks<strong class="fact-counter">45780</strong></span>
+                                                    <span>Livres<strong class="fact-counter">1200</strong></span>
                                                 </div>
                                             </li>
                                             <li class="col-sm-3">
@@ -439,7 +380,7 @@
                                                     <div class="fact-icon">
                                                         <img src="images/icon-eaudio.png" alt="" />
                                                     </div>
-                                                    <span>eAudio<strong class="fact-counter">32450</strong></span>
+                                                    <span>e-Livres<strong class="fact-counter">500</strong></span>
                                                 </div>
                                             </li>
                                             <li class="col-sm-3">
@@ -447,17 +388,10 @@
                                                     <div class="fact-icon">
                                                         <img src="images/icon-magazine.png" alt="" />
                                                     </div>
-                                                    <span>Magazine<strong class="fact-counter">14450</strong></span>
+                                                    <span>Magazines<strong class="fact-counter">1000</strong></span>
                                                 </div>
                                             </li>
-                                            <li class="col-sm-3">
-                                                <div class="fact-item icon-videos">
-                                                    <div class="fact-icon">
-                                                        <img src="images/icon-videos.png" alt="" />
-                                                    </div>
-                                                    <span>Videos<strong class="fact-counter">32450</strong></span>
-                                                </div>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -466,7 +400,7 @@
                                 <div class="company-info">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md-10 aligncenter">
+                                            <div class="col-md-9 aligncenter">
                                             <div class="col-md-6 border-dark-left">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -474,19 +408,18 @@
                                                             <h3 class="section-title">Study Rooms</h3>
                                                             <span class="underline left"></span>
                                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec mauris a neque tincidunt iaculis. Sed tristique luctus sapien. Vestibulum arcu magna, ullamcorper quis porta ac, venenatis non ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras commodo sollicitudin felis vel porttitor. Quisque vitae egestas sapien.</p>
-                                                            <a href="#." class="btn btn-primary">Get a card</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 border-dark">
+                                            <div class="col-md-5 border-dark">
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-11">
                                                         <div class="company-detail bg-light margin-right">
                                                             <h3 class="section-title">Books and more</h3>
                                                             <span class="underline left"></span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec mauris a neque tincidunt iaculis. Sed tristique luctus sapien. Vestibulum arcu magna, ullamcorper quis porta ac, venenatis non ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras commodo sollicitudin felis vel porttitor. Quisque vitae egestas sapien.</p>
-                                                            <a href="contact.html" class="btn btn-dark-gray">Make a request</a>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. uada fames ac turpis egestas. Cras commodo sollicitudin felis vel porttitor. Quisque vitae egestas sapien.</p>
+                                                            <a href="{% url 'contact' %}" class="btn btn-dark-gray">Make a request</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -497,310 +430,7 @@
                                 </div>
                             </section>
                             <!-- Start: Our Partners Section -->
-                            <section class="community-testimonial">
-                                <div class="container">
-                                    <div class="text-center">
-                                        <h2 class="section-title">Words From our Community</h2>
-                                        <span class="underline center"></span>
-                                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div class="owl-carousel">
-                                        <div class="single-testimonial-box">
-                                            <div class="top-portion">
-                                                <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                                                <div class="user-comment">
-                                                    <div class="arrow-left"></div>
-                                                    <blockquote cite="#">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                                    </blockquote>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-                                            <div class="bottom-portion">
-                                                    <a href="#" class="author">
-                                                        Adrey Pachai <small> (Student )</small>
-                                                    </a>
-                                                <div class="social-share-links">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="single-testimonial-box">
-                                            <div class="top-portion">
-                                                <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                                                <div class="user-comment">
-                                                    <div class="arrow-left"></div>
-                                                    <blockquote cite="#">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                                    </blockquote>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-                                            <div class="bottom-portion">
-                                                    <a href="#" class="author">
-                                                        Maria B <small> (Student )</small>
-                                                    </a>
-                                                <div class="social-share-links">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="single-testimonial-box">
-                                            <div class="top-portion">
-                                                <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                                                <div class="user-comment">
-                                                    <div class="arrow-left"></div>
-                                                    <blockquote cite="#">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                                    </blockquote>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-                                            <div class="bottom-portion">
-                                                    <a href="#" class="author">
-                                                        Adrey Pachai <small> (Student )</small>
-                                                    </a>
-                                                <div class="social-share-links">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- End: Our Partners Section -->
-                            <section class="category-filter new-release">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6 col-md-offset-3 text-center">
-                                            <h2 class="section-title">Check Out The New Releases</h2>
-                                            <span class="underline center"></span>
-                                            <p class="lead">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="category-filter">
-                                    <ul class="category-list">
-                                        <li class="category-item">
-                                            <figure>
-                                                <img src="images/category-filter/home-v1/category-filter-img-01.jpg" alt="New Releaase" />
-                                                <figcaption class="bg-orange">
-                                                    <div class="info-block">
-                                                        <h4>The Great Gatsby</h4>
-                                                        <span class="author"><strong>Author:</strong> F. Scott Fitzgerald</span>
-                                                        <span class="author"><strong>ISBN:</strong> 9781581573268</span>
-                                                        <div class="rating">
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                        </div>
-                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
-                                                        <a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                        <ol>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-heart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-envelope"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-share-alt"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ol>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                        <li class="category-item">
-                                            <figure>
-                                                <img src="images/category-filter/home-v1/category-filter-img-02.jpg" alt="New Releaase" />
-                                                <figcaption class="bg-orange">
-                                                    <div class="info-block">
-                                                        <h4>The Great Gatsby</h4>
-                                                        <span class="author"><strong>Author:</strong> F. Scott Fitzgerald</span>
-                                                        <span class="author"><strong>ISBN:</strong> 9781581573268</span>
-                                                        <div class="rating">
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                        </div>
-                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
-                                                        <a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                        <ol>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-heart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-envelope"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-share-alt"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ol>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                        <li class="category-item">
-                                            <figure>
-                                                <img src="images/category-filter/home-v1/category-filter-img-03.jpg" alt="New Releaase" />
-                                                <figcaption class="bg-orange">
-                                                    <div class="info-block">
-                                                        <h4>The Great Gatsby</h4>
-                                                        <span class="author"><strong>Author:</strong> F. Scott Fitzgerald</span>
-                                                        <span class="author"><strong>ISBN:</strong> 9781581573268</span>
-                                                        <div class="rating">
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                        </div>
-                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
-                                                        <a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                        <ol>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-heart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-envelope"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-share-alt"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ol>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                        <li class="category-item">
-                                            <figure>
-                                                <img src="images/category-filter/home-v1/category-filter-img-04.jpg" alt="New Releaase" />
-                                                <figcaption class="bg-orange">
-                                                    <div class="info-block">
-                                                        <h4>The Great Gatsby</h4>
-                                                        <span class="author"><strong>Author:</strong> F. Scott Fitzgerald</span>
-                                                        <span class="author"><strong>ISBN:</strong> 9781581573268</span>
-                                                        <div class="rating">
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                            <span>☆</span>
-                                                        </div>
-                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
-                                                        <a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                        <ol>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-heart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-envelope"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-share-alt"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ol>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                    </ul>                                    
-                                    <div class="clearfix"></div>
-                                </div>
-                            </section>
+                            
                             <!-- Start: Category Filter -->
                         </div>
                     </div>
@@ -813,47 +443,33 @@
         <section class="social-network section-padding">
             <div class="container">
                 <div class="center-content">
-                    <h2 class="section-title">Follow Us</h2>
+                    <h2 class="section-title">Suivez Nous Sur Les Réseaux :</h2>
                     <span class="underline center"></span>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <ul>
-                    <li>
+                <ul style="width: 100%;">
+                    <li style="width: 25%;">
                         <a class="facebook" href="#" target="_blank">
                             <span>
                                 <i class="fa fa-facebook-f"></i>
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li style="width: 25%;">
                         <a class="twitter" href="#" target="_blank">
                             <span>
                                 <i class="fa fa-twitter"></i>
                             </span>
                         </a>
                     </li>
-                    <li>
-                        <a class="google" href="#" target="_blank">
-                            <span>
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="rss" href="#" target="_blank">
-                            <span>
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
+                    
+                    <li style="width: 25%;">
                         <a class="linkedin" href="#" target="_blank">
                             <span>
                                 <i class="fa fa-linkedin"></i>
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li style="width: 25%;">
                         <a class="youtube" href="#" target="_blank">
                             <span>
                                 <i class="fa fa-youtube"></i>
@@ -875,20 +491,20 @@
                                 <h3 class="footer-widget-title">About LibraryZone</h3>
                                 <span class="underline left"></span>
                                 <div class="textwidget">
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking.
+                                    Online Library That Afford Books To Their Readers And New Users
                                 </div>
                                 <address>
                                     <div class="info">
                                         <i class="fa fa-location-arrow"></i>
-                                        <span>Casablanca,maarif</span>
+                                        <span>Maarif , Casablanca </span>
                                     </div>
                                     <div class="info">
                                         <i class="fa fa-envelope"></i>
-                                        <span><a href="mailto:support@LibraryZone.com">support@LibraryZone.com</a></span>
+                                        <span><a href="mailto:support-LibraryZone@gmail.com">support-LibraryZone@gmail.com</a></span>
                                     </div>
                                     <div class="info">
                                         <i class="fa fa-phone"></i>
-                                        <span><a href="tel:012-345-6789">+ 012-345-6789</a></span>
+                                        <span><a href="tel:+212 5 22 98 20 11">+212 5 22 98 20 11</a></span>
                                     </div>
                                 </address>
                             </div>
@@ -915,10 +531,8 @@
                                 <h3 class="footer-widget-title">Timing</h3>
                                 <span class="underline left"></span>
                                 <div class="timming-text-widget">
-                                    <time datetime="2017-02-13">Mon - Thu: 9 am - 9 pm</time>
-                                    <time datetime="2017-02-13">Fri: 9 am - 6 pm</time>
-                                    <time datetime="2017-02-13">Sat: 9 am - 5 pm</time>
-                                    <time datetime="2017-02-13">Sun: 1 pm - 6 pm</time>
+                                    <date>24H / 24H 
+                                        7Days / 7Days (unless there is a bug at website)</date>
                                     <ul>
                                         <li><a href="#">Closings</a></li>
                                         <li><a href="#">Branches</a></li>
@@ -933,10 +547,10 @@
                                 <div id="twitter-feed">
                                     <ul>
                                         <li>
-                                            <p><a href="#">@LibraryZone</a> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a href="#">LibraryZone</a></p>
+                                            <p><a href="#"></a> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a href="#">mailto:support@libraria.com</a></p>
                                         </li>
                                         <li>
-                                            <p><a href="#">@LibraryZone</a> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a href="#">LibraryZone</a></p>
+                                            <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a href="#">mailto:support@libraria.com</a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -945,32 +559,12 @@
                     </div>
                 </div>                
             </div>
-            <div class="sub-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer-text col-md-3">
-                            <p><a target="_blank" href="https://www.templateshub.net">Hub</a></p>
-                        </div>
-                        <div class="col-md-9 pull-right">
-                            <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="books-media-list-view.html">Books</a></li>
-                                <li><a href="news-events-list-view.html">News &amp; Events</a></li>
-                                <li><a href="#">Kids &amp; Teens</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       
         </footer>
         <!-- End: Footer -->
         
         <!-- jQuery Latest Version 1.x -->
-        <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js'%}"></script>
         
         <!-- jQuery UI -->
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -979,25 +573,25 @@
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
         <!-- Bootstrap -->
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script>
         
         <!-- Mobile Menu -->
         <script type="text/javascript" src="js/mmenu.min.js"></script>
         
         <!-- Harvey - State manager for media queries -->
-        <script type="text/javascript" src="js/harvey.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/harvey.min.js'%}"></script>
         
         <!-- Waypoints - Load Elements on View -->
-        <script type="text/javascript" src="js/waypoints.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/waypoints.min.js'%}"></script>
 
         <!-- Facts Counter -->
-        <script type="text/javascript" src="js/facts.counter.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/facts.counter.min.js'%}"></script>
 
         <!-- MixItUp - Category Filter -->
-        <script type="text/javascript" src="js/mixitup.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/mixitup.min.js'%}"></script>
 
         <!-- Owl Carousel -->
-        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/owl.carousel.min.js'%}"></script>
         
         <!-- Accordion -->
         <script type="text/javascript" src="js/accordion.min.js"></script>
@@ -1012,13 +606,13 @@
         <script type="text/javascript" src="js/masonry.min.js"></script>
         
         <!-- Carousel Swipe -->
-        <script type="text/javascript" src="js/carousel.swipe.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/carousel.swipe.min.js' %}"></script>
         
         <!-- bxSlider -->
-        <script type="text/javascript" src="js/bxslider.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/bxslider.min.js' %}"></script>
         
         <!-- Custom Scripts -->
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="{% static 'js/main.js'%}"></script>
         
     </body>
 

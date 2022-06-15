@@ -1,0 +1,7 @@
+#left_sec{
+    background-color: black;
+    color: green;
+    width: 20%;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
