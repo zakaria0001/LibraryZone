@@ -30,7 +30,7 @@
                 "sha256:f7431a5de7277966f3785557c3928433347d998c1e6459324501378a291e5aab"
             ],
             "index": "pypi",
-            "version": "==4.0.4"
+            "version": "==3.2.12"
         },
         "sqlparse": {
             "hashes": [
