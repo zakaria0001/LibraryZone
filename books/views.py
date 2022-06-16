@@ -12,7 +12,7 @@ def home(request):
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:Books")
     args['items'] = response.json()
-    return render(request, 'https://libraryzone.herokuapp.com/index.html',{'args':args})
+    return render(request, 'index.html',{'args':args})
 
 def api(request):
     args = {}
