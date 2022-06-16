@@ -12,7 +12,7 @@ def home(request):
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:Books")
     args['items'] = response.json()
-    return render(request, '../templates/index.html',{'args':args})
+    return render(request, 'index.html',{'args':args})
 
 def api(request):
     args = {}
@@ -20,7 +20,7 @@ def api(request):
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:{bookname}")
     args['items'] = response.json()
-    return render(request, 'templates/checkout.html', {'args':args,'CurrSearch':bookname})
+    return render(request, 'checkout.html', {'args':args,'CurrSearch':bookname})
 
 def dashboard(request):
    
