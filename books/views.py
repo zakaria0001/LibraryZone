@@ -12,7 +12,7 @@ def home(request):
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:Books")
     args['items'] = response.json()
-    return render(request, 'index.html',{'args':args})
+    return render(request, 'templates/index.html',{'args':args})
 
 def api(request):
     args = {}
@@ -20,11 +20,11 @@ def api(request):
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:{bookname}")
     args['items'] = response.json()
-    return render(request, 'checkout.html', {'args':args,'CurrSearch':bookname})
+    return render(request, 'templates/checkout.html', {'args':args,'CurrSearch':bookname})
 
 def dashboard(request):
    
-    return render(request, 'Dashboard.html')
+    return render(request, 'templates/Dashboard.html')
 
 def checkout(request):
     args = {}
@@ -32,13 +32,13 @@ def checkout(request):
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:{bookname}")
     args['items'] = response.json()
-    return render(request,'checkout.html',  {'args':args,'CurrSearch':bookname})
+    return render(request,'templates/checkout.html',  {'args':args,'CurrSearch':bookname})
 
 def services(request):
-    return render(request,'services.html')
+    return render(request,'templates/services.html')
 
 def contact(request):
-    return render(request,'contact.html')
+    return render(request,'templates/contact.html')
 
 # def Auths(request):
 #     if request.method == 'POST':
