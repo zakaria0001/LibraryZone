@@ -2,7 +2,7 @@ from django.urls import path, re_path
 
 from . import views
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('https://libraryzone.herokuapp.com/', views.home, name='home'),
     path('checkout/', views.checkout, name='checkout'),
     path('services/', views.services, name='services'),
     path('contact/', views.contact, name='contact'),
