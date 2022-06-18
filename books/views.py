@@ -24,7 +24,7 @@ def api(request):
 
 def dashboard(request):
    
-    return render(request, 'templates/Dashboard.html')
+    return render(request, 'Dashboard.html')
 
 def checkout(request):
     args = {}
