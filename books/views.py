@@ -8,7 +8,6 @@ from sqlalchemy import null
 
 def home(request):
     args = {}
-    bookname = request.GET.get('book', False)
     response = requests.get(
         f"https://www.googleapis.com/books/v1/volumes?q=intitle:Books")
     args['items'] = response.json()
