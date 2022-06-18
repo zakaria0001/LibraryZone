@@ -25,7 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xtj+7n=_p@_$dskk15e5u4r+i^==!rejuujv@d8u95c7jhuk18'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
+ALLOWED_HOSTS = ['libraryzone.herokuapp.com']
 
 
 # Application definition
@@ -128,7 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
