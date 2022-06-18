@@ -34,10 +34,10 @@ def checkout(request):
     return render(request,'checkout.html',  {'args':args,'CurrSearch':bookname})
 
 def services(request):
-    return render(request,'templates/services.html')
+    return render(request,'services.html')
 
 def contact(request):
-    return render(request,'templates/contact.html')
+    return render(request,'contact.html')
 
 # def Auths(request):
 #     if request.method == 'POST':
