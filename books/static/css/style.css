@@ -9570,7 +9570,7 @@ a:focus {
 }
 @media (max-width: 767px) {
   .category-filter .category-list .category-item {
-    width: 100%;
+    width: 50%;
   }
 }
 .category-filter .category-list .category-item figure {
@@ -9617,6 +9617,7 @@ a:focus {
 @media (max-width: 767px) {
   .category-filter .category-list .category-item .info-block {
     padding: 0 20px;
+    width: 30%;
   }
 }
 .category-filter .category-list .category-item .info-block h4 {

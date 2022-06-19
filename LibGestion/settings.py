@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-xtj+7n=_p@_$dskk15e5u4r+i^==!rejuujv@d8u95c7jhuk18
 DEBUG = True
 
 ALLOWED_HOSTS = ['libraryzone.herokuapp.com']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition

@@ -157,25 +157,20 @@ color:white
                         <div class="mobile-menu hidden-lg hidden-md">
                             <a href="#mobile-menu"><i class="fa fa-navicon"></i></a>
                             <div id="mobile-menu">
-                                <ul>
-                                    <li class="mobile-title">
-                                        <h4>Navigation</h4>
-                                        <a href="#" class="close"></a>
-                                    </li>
-                                    <li>
-                                        <a href="index-2.html">Home</a>
-                                       
-                                    </li>
-                                    <li>
-                                        <a href="books-media-list-view.html">Books &amp; Media</a>
-                                       
-                                    </li>
+                                <ul >
+                                        <li  class="mobile-title">
+                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'home' %}">Accuiel</a>
+                                            
+                                        </li>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Livres</a>
+                                           
+                                        </li>
+                                        
                                     
-                                   
-                                    
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
+                                        <li><a href="{% url 'services' %}">Services</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    </ul>
                             </div>
                         </div>
                     </nav>
@@ -197,37 +192,11 @@ color:white
                         <div class="carousel-caption">
                             <h3>Online Learning Anytime, Anywhere!</h3>
                             <h2>Discover Your Roots</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
                             
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <figure>
-                        <img alt="Home Slide" src="{% static 'images/header-slider/home-v2/header-slide.jpg'%}" />
-                    </figure>
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h3>Online Learning Anytime, Anywhere!</h3>
-                            <h2>Discover Your Roots</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure>
-                        <img alt="Home Slide" src="{% static 'images/header-slider/home-v3/header-slide.jpg'%}" />
-                    </figure>
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h3>Online Learning Anytime, Anywhere!</h3>
-                            <h2>Discover Your Roots</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                           
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             
             <!-- Controls -->
@@ -245,7 +214,7 @@ color:white
                         <div class="col-md-10 col-sm-6">
                             <div class="form-group">
                                 <label class="sr-only" for="keywords">Search by Keyword</label>
-                                <input class="form-control" placeholder="Search by Book Name" id="keywords" name="book" type="text">
+                                <input class="form-control" placeholder="Nom Du Livre | Magasine " id="keywords" name="book" type="text">
                             </div>
                         </div>
                         
@@ -270,7 +239,6 @@ color:white
                                 <h2 class="section-title">Bienvenue Chez </h2>
                                 <span class="underline left"></span>
                                 <img src="{% static 'LogoLibraryZone.png'%}" alt="" srcset="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humor, or non-characteristic words etc.</p>
                             </div>
                         </div>
                     </div>
@@ -325,7 +293,7 @@ color:white
             <div id="category-filter">
                 <ul class="category-list">
                     {% for item in args.items.items %}
-                    <li class="category-item {{item.volumeInfo.categories.0 }}" >
+                    <li class="category-item {{item.volumeInfo.categories.0 }}" style="margin-bottom:3%" >
                         <figure>
                             {% if item.volumeInfo.imageLinks.thumbnail == None  %}
                         <img style="height:450px" src="{% static 'book_icon6770.ico' %}" alt="" srcset="">
@@ -410,18 +378,18 @@ color:white
                     <li class="bg-yellow">
                         <div class="feature-box">
                             <i class="yellow"></i>
-                            <h3>Books</h3>
+                            <h3>Livres</h3>
                             <a class="yellow" href="#">
-                                View Selection <i class="fa fa-long-arrow-right"></i>
+                                Plus De Détails <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
                     </li>
                     <li class="bg-light-green">
                         <div class="feature-box">
                             <i class="light-green"></i>
-                            <h3>eBooks</h3>
+                            <h3>E-Livres</h3>
                             <a class="light-green" href="#">
-                                View Selection <i class="fa fa-long-arrow-right"></i>
+                                Plus De Détails <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
                     </li>
@@ -429,9 +397,9 @@ color:white
                     <li class="bg-red">
                         <div class="feature-box">
                             <i class="red"></i>
-                            <h3>Magazines</h3>
+                            <h3>Magasines</h3>
                             <a class="red" href="#">
-                                View Selection <i class="fa fa-long-arrow-right"></i>
+                                Plus De Détails <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
                     </li>
@@ -448,7 +416,7 @@ color:white
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="center-content">
-                            <h2 class="section-title">Subscribe to our Newsletters</h2>
+                            <h2 class="section-title">Abonnez Vous à notre NewsLetters</h2>
                             <span class="underline center"></span>
                         </div>
                         <div class="form-group">
@@ -465,7 +433,7 @@ color:white
         <section class="team section-padding">
             <div class="container">
                 <div class="center-content">
-                    <h2 class="section-title">Meet Our Developpers</h2>
+                    <h2 class="section-title">Our Team</h2>
                     <span class="underline center"></span>
                     <p class="lead">who by the way spent a lot of time and efforts to maintain this website</p>
                 </div>
@@ -702,22 +670,7 @@ color:white
                                 </div>
                             </div>			
                         </div>
-                        <div class="col-md-4 col-sm-6 widget-container">
-                            <div class="widget twitter-widget">
-                                <h3 class="footer-widget-title">Latest Tweets</h3>
-                                <span class="underline left"></span>
-                                <div id="twitter-feed">
-                                    <ul>
-                                        <li>
-                                            <p><a href="#"></a> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a href="#">mailto:support@libraria.com</a></p>
-                                        </li>
-                                        <li>
-                                            <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a href="#">mailto:support@libraria.com</a></p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>			
-                        </div>
+                        
                     </div>
                 </div>                
             </div>

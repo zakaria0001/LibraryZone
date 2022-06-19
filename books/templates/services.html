@@ -148,25 +148,20 @@
                         <div class="mobile-menu hidden-lg hidden-md">
                             <a href="#mobile-menu"><i class="fa fa-navicon"></i></a>
                             <div id="mobile-menu">
-                                <ul>
-                                    <li class="mobile-title">
-                                        <h4>Navigation</h4>
-                                        <a href="#" class="close"></a>
-                                    </li>
-                                    <li>
-                                        <a href="index-2.html">Home</a>
-                                       
-                                    </li>
-                                    <li>
-                                        <a href="books-media-list-view.html">Books &amp; Media</a>
-                                       
-                                    </li>
+                                <ul >
+                                        <li  class="mobile-title">
+                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'home' %}">Accuiel</a>
+                                            
+                                        </li>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Livres</a>
+                                           
+                                        </li>
+                                        
                                     
-                                   
-                                    
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
+                                        <li><a href="{% url 'services' %}">Services</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    </ul>
                             </div>
                         </div>
                     </nav>
@@ -184,7 +179,7 @@
                 </div>
                 <div class="breadcrumb">
                     <ul>
-                        <li><a href="index-2.html">Home</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
                         <li>Services</li>
                     </ul>
                 </div>
