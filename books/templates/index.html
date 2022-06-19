@@ -196,6 +196,31 @@ color:white
                         </div>
                     </div>
                 </div>
+                <div class="item">
+                    <figure>
+                        <img alt="Home Slide" src="{% static 'images/header-slider/home-v2/header-slide.jpg'%}" />
+                    </figure>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3>Online Learning Anytime, Anywhere!</h3>
+                            <h2>Discover Your Roots</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <figure>
+                        <img alt="Home Slide" src="{% static 'images/header-slider/home-v3/header-slide.jpg'%}" />
+                    </figure>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3>Online Learning Anytime, Anywhere!</h3>
+                            <h2>Discover Your Roots</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+
                 
             </div>
             
@@ -296,7 +321,7 @@ color:white
                     <li class="category-item {{item.volumeInfo.categories.0 }}" style="margin-bottom:3%" >
                         <figure>
                             {% if item.volumeInfo.imageLinks.thumbnail == None  %}
-                        <img style="height:450px" src="{% static 'book_icon6770.ico' %}" alt="" srcset="">
+                        <img style="height:450px;" src="{% static 'book_icon6770.ico' %}" alt="" srcset="">
                         {% else  %}
                         <img  style="height:450px" src="{{ item.volumeInfo.imageLinks.thumbnail}}" alt="" srcset="" >
                         {%endif%}
