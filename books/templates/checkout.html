@@ -234,7 +234,7 @@
         </section>
         <!-- End: Page Banner -->
         <!-- Start: Cart Checkout Section -->
-        <h1 style="text-align: center ; margin: 2%;">Livres Disponibles :  </h1>
+        <h1 style="text-align: center ;">Livres Disponibles :  </h1>
 
         <section class="category-filter section-padding">
             <div class="container">
@@ -246,7 +246,7 @@
             <div id="category-filter">
                 <ul class="category-list">
                     {% for item in args.items.items %}
-                    <li class="category-item {{item.volumeInfo.categories.0 }}" style="margin-bottom:3%">
+                    <li class="category-item {{item.volumeInfo.categories.0 }}">
                         <figure>
                             {% if item.volumeInfo.imageLinks.thumbnail == None  %}
                         <img style="height:450px" src="{% static 'book_icon6770.ico' %}" alt="" srcset="">
